@@ -4,7 +4,7 @@
 #
 Name     : pypi-urwid
 Version  : 2.1.2
-Release  : 56
+Release  : 57
 URL      : https://files.pythonhosted.org/packages/94/3f/e3010f4a11c08a5690540f7ebd0b0d251cc8a456895b7e49be201f73540c/urwid-2.1.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/94/3f/e3010f4a11c08a5690540f7ebd0b0d251cc8a456895b7e49be201f73540c/urwid-2.1.2.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
@@ -14,9 +14,6 @@ Requires: pypi-urwid-license = %{version}-%{release}
 Requires: pypi-urwid-python = %{version}-%{release}
 Requires: pypi-urwid-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: python-urwid
-Provides: python-urwid-python
-Provides: python-urwid-python3
 BuildRequires : python3-dev
 
 %description
@@ -61,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641485439
+export SOURCE_DATE_EPOCH=1649791988
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
