@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-urwid
-Version  : 2.2.0
-Release  : 68
-URL      : https://files.pythonhosted.org/packages/ae/d5/501aaf50b8eba09f4fa12f2b176bc4516fe41c853cf4fe31d9b7704defd1/urwid-2.2.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ae/d5/501aaf50b8eba09f4fa12f2b176bc4516fe41c853cf4fe31d9b7704defd1/urwid-2.2.0.tar.gz
+Version  : 2.2.1
+Release  : 69
+URL      : https://files.pythonhosted.org/packages/88/2b/88ed2915a1219c5543a97e761dd1fa46402025f64e57c571795f8ee1afab/urwid-2.2.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/88/2b/88ed2915a1219c5543a97e761dd1fa46402025f64e57c571795f8ee1afab/urwid-2.2.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-2.1-only
@@ -64,10 +64,10 @@ python3 components for the pypi-urwid package.
 
 
 %prep
-%setup -q -n urwid-2.2.0
-cd %{_builddir}/urwid-2.2.0
+%setup -q -n urwid-2.2.1
+cd %{_builddir}/urwid-2.2.1
 pushd ..
-cp -a urwid-2.2.0 buildavx2
+cp -a urwid-2.2.1 buildavx2
 popd
 
 %build
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1695309263
+export SOURCE_DATE_EPOCH=1695655651
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
