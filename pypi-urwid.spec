@@ -5,7 +5,7 @@
 #
 Name     : pypi-urwid
 Version  : 2.2.2
-Release  : 70
+Release  : 71
 URL      : https://files.pythonhosted.org/packages/5f/cf/2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25d/urwid-2.2.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/5f/cf/2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25d/urwid-2.2.2.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
