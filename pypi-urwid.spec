@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : pypi-urwid
-Version  : 2.3.4
-Release  : 75
-URL      : https://files.pythonhosted.org/packages/97/52/0f9b7a2414ec1fea3aff598adffb9865782d95906fd79b42daec99af4043/urwid-2.3.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/97/52/0f9b7a2414ec1fea3aff598adffb9865782d95906fd79b42daec99af4043/urwid-2.3.4.tar.gz
+Version  : 2.4.1
+Release  : 76
+URL      : https://files.pythonhosted.org/packages/58/7e/4191aa9a1c4a7b2f73a7548002754863189217464fbf76045526c7c97be5/urwid-2.4.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/58/7e/4191aa9a1c4a7b2f73a7548002754863189217464fbf76045526c7c97be5/urwid-2.4.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-2.1-only
@@ -35,8 +35,8 @@ Urwid
 |pypi| |docs| |ci| |coveralls|
 About
 =====
-Urwid is a console user interface library for Python on Linux, OSX, Cygwin or other unix-like OS.
-It includes many features useful for text console application developers including:
+Urwid is a console user interface library for Python on Linux, OSX, Cygwin or other unix-like OS
+and partially supports Windows OS (see below).
 
 %package license
 Summary: license components for the pypi-urwid package.
@@ -66,10 +66,10 @@ python3 components for the pypi-urwid package.
 
 
 %prep
-%setup -q -n urwid-2.3.4
-cd %{_builddir}/urwid-2.3.4
+%setup -q -n urwid-2.4.1
+cd %{_builddir}/urwid-2.4.1
 pushd ..
-cp -a urwid-2.3.4 buildavx2
+cp -a urwid-2.4.1 buildavx2
 popd
 
 %build
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702072783
+export SOURCE_DATE_EPOCH=1704298509
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
