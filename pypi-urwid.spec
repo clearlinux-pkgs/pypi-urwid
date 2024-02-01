@@ -6,10 +6,10 @@
 # autospec commit: fae1327
 #
 Name     : pypi-urwid
-Version  : 2.5.0
-Release  : 81
-URL      : https://files.pythonhosted.org/packages/82/20/dc1ecc94c75e402887efc734785275fdd12ebd3fb2f312a575f741bf3dad/urwid-2.5.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/82/20/dc1ecc94c75e402887efc734785275fdd12ebd3fb2f312a575f741bf3dad/urwid-2.5.0.tar.gz
+Version  : 2.5.1
+Release  : 82
+URL      : https://files.pythonhosted.org/packages/81/b2/a8b2c856f3a09d857a6d830dc1c34ee1553e58afaf6d97d56ee2ed223eeb/urwid-2.5.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/81/b2/a8b2c856f3a09d857a6d830dc1c34ee1553e58afaf6d97d56ee2ed223eeb/urwid-2.5.1.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-2.1-only
@@ -33,7 +33,7 @@ BuildRequires : pypi-virtualenv
 %description
 Urwid
 =====
-|pypi| |docs| |ci| |coveralls|
+|pypi| |docs| |gitter| |ci| |coveralls|
 About
 =====
 Urwid is a console user interface library for Python on Linux, OSX, Cygwin or other unix-like OS
@@ -68,10 +68,10 @@ python3 components for the pypi-urwid package.
 
 
 %prep
-%setup -q -n urwid-2.5.0
-cd %{_builddir}/urwid-2.5.0
+%setup -q -n urwid-2.5.1
+cd %{_builddir}/urwid-2.5.1
 pushd ..
-cp -a urwid-2.5.0 buildavx2
+cp -a urwid-2.5.1 buildavx2
 popd
 
 %build
@@ -79,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1706546423
+export SOURCE_DATE_EPOCH=1706826565
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
