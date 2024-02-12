@@ -6,10 +6,10 @@
 # autospec commit: da8b975
 #
 Name     : pypi-urwid
-Version  : 2.5.2
-Release  : 83
-URL      : https://files.pythonhosted.org/packages/f0/a7/0f316e52be715e3896665f55422b52f50bcdf52ff48b1a0f92912319ecdd/urwid-2.5.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/f0/a7/0f316e52be715e3896665f55422b52f50bcdf52ff48b1a0f92912319ecdd/urwid-2.5.2.tar.gz
+Version  : 2.5.3
+Release  : 84
+URL      : https://files.pythonhosted.org/packages/bb/18/5312d4b55ab8f69cb82de25a68ed2efd303409bc564f403623f561e8cfde/urwid-2.5.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/bb/18/5312d4b55ab8f69cb82de25a68ed2efd303409bc564f403623f561e8cfde/urwid-2.5.3.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-2.1-only
@@ -21,6 +21,7 @@ BuildRequires : pypi(py)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(setuptools_scm)
 BuildRequires : pypi(typing_extensions)
+BuildRequires : pypi(wcwidth)
 BuildRequires : pypi(wheel)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
@@ -62,19 +63,17 @@ Group: Default
 Requires: python3-core
 Provides: pypi(urwid)
 Requires: pypi(typing_extensions)
+Requires: pypi(wcwidth)
 
 %description python3
 python3 components for the pypi-urwid package.
 
 
 %prep
-%setup -q -n urwid-2.5.2
-cd %{_builddir}/urwid-2.5.2
+%setup -q -n urwid-2.5.3
+cd %{_builddir}/urwid-2.5.3
 pushd ..
-cp -a urwid-2.5.2 buildavx2
-popd
-pushd ..
-cp -a urwid-2.5.2 buildapx
+cp -a urwid-2.5.3 buildavx2
 popd
 
 %build
@@ -82,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707500065
+export SOURCE_DATE_EPOCH=1707768875
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -101,16 +100,6 @@ CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
-LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
-python3 -m build --wheel --skip-dependency-check --no-isolation
-
-popd
-pushd ../buildapx/
-CC=gcc-14
-CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
-FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 -mapxf -mavx10.1 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
@@ -144,17 +133,7 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
 python3 -m installer --destdir=%{buildroot}-v3 dist/*.whl
 popd
-pushd ../buildapx/
-CC=gcc-14
-CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
-FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 -mapxf -mavx10.1 "
-LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
-python3 -m installer --destdir=%{buildroot}-va dist/*.whl
-popd
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
-/usr/bin/elf-move.py apx %{buildroot}-va %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
