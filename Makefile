@@ -1,5 +1,5 @@
 PKG_NAME := pypi-urwid
-URL = https://files.pythonhosted.org/packages/2b/a0/dbf80c29a8ba7a0f3fdcf0a70f4924f83bc611aff21bc5bfc268b545bcbb/urwid-2.6.6.tar.gz
+URL = https://files.pythonhosted.org/packages/8c/58/51172f1f71955522f75d5e19654509afce6ceecdd9ce61a7bcba502d5903/urwid-2.6.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
