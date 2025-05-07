@@ -6,10 +6,10 @@
 # autospec commit: 9594167
 #
 Name     : pypi-urwid
-Version  : 3.0.0
-Release  : 103
-URL      : https://files.pythonhosted.org/packages/38/c5/5df522255d59cb41f0670e4cf73c326ec2eafe209a710efdb7477e7f668c/urwid-3.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/38/c5/5df522255d59cb41f0670e4cf73c326ec2eafe209a710efdb7477e7f668c/urwid-3.0.0.tar.gz
+Version  : 3.0.2
+Release  : 104
+URL      : https://files.pythonhosted.org/packages/46/2d/71550379ed6b34968e14f73b0cf8574dee160acb6b820a066ab238ef2d4f/urwid-3.0.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/46/2d/71550379ed6b34968e14f73b0cf8574dee160acb6b820a066ab238ef2d4f/urwid-3.0.2.tar.gz
 Summary  : A full-featured console (xterm et al.) user interface library
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-2.1-only
@@ -68,10 +68,10 @@ python3 components for the pypi-urwid package.
 
 
 %prep
-%setup -q -n urwid-3.0.0
-cd %{_builddir}/urwid-3.0.0
+%setup -q -n urwid-3.0.2
+cd %{_builddir}/urwid-3.0.2
 pushd ..
-cp -a urwid-3.0.0 buildavx2
+cp -a urwid-3.0.2 buildavx2
 popd
 
 %build
@@ -79,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1746540525
+export SOURCE_DATE_EPOCH=1746627101
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
